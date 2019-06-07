@@ -7,24 +7,38 @@ body{
 div{
     margin: auto;
 }
+h1{
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
 form{
     text-align: right;
 }
 label{
+    text-decoration-line: underline;
+    text-decoration-style: solid;
     font-size: 20px;
     font-weight: bold;
 }
 input{
     font-size: 18px;
-    margin: 1em
+    margin: 1em   
+}
+#submit-button{
+    width: 50%;
+    padding: 1em;
+    margin: 1em;
+    box-sizing: border-box;
+    background-color: red;
+    color: white;
+    font-size: 15px;
     
 }
-
 </style>
 
 <body>
     <div id="main-page-div">
-        <h1> <%=@car.make_model_year%> </h1>
+        <h1> <%=@car.make_model_year%> </h1>      <!--method in Model 'Car' -->
         
         <form method="POST" action='/cars/<%= @car.id %>'>
             <input type="hidden" name=_method value="patch">
@@ -36,7 +50,7 @@ input{
                         <%end%>
                     <%end%>   
                 </div> 
-            <input type="submit" value="Submit Changes">    
+            <input id="submit-button" type="submit" value="Submit Changes">    
         </form>         
     </div>          
 </body>      

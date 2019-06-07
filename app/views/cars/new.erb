@@ -8,8 +8,15 @@ div{
     margin: auto;
     
 }
+h1{
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+ul{
+    list-style-type: none;
+}
 form{
-    margin-right: 25em;
+    margin-right: 37em;
     display: block;
     text-align: right;
 }
@@ -22,19 +29,33 @@ input{
     margin: 1em;
 }
 button{
-    font-size: 18px;
-    margin-top: 5em;
+    background-color: Lightblue;
+    border-radius: 20px;
+    margin-bottom: 2em;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     
 }
 #submit-button{
-    margin-right: 115px;
+    width: 25%;
+    padding: 1em;
+    margin: 1em;
+    box-sizing: border-box;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    
 }
 
 
 </style>
 
 <body>
-    <% array = ["year", "make", "model", "color", "horsepower", "mileage", "fuel_econ_mpg"] %>
+    <% array = ["year", "make", "model", "color", "horsepower", "mileage", "fuel_econ_mpg"] %> <!-- array for pushing in attributes -->
     <div>
         <h1> Create A New Car!!! </h1>
     </div>
