@@ -1,0 +1,54 @@
+<style>
+body{
+    margin: auto;
+    background-color: Lightgrey;
+    text-align: center;
+}
+div{
+    margin: auto;
+    
+}
+form{
+    margin-right: 25em;
+    display: block;
+    text-align: right;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+input{
+    font-size: 18px;
+    margin: 1em;
+}
+button{
+    font-size: 18px;
+    margin-top: 5em;
+    
+}
+#submit-button{
+    margin-right: 115px;
+}
+
+
+</style>
+
+<body>
+    <% array = ["year", "make", "model", "color", "horsepower", "mileage", "fuel_econ_mpg"] %>
+    <div>
+        <h1> Create A New Car!!! </h1>
+    </div>
+    <div>
+        <form method=POST action='/cars'>
+        
+        <% array.each do |att| %>
+            <label> <%=att%> </label>
+            <input required type="text" name=<%= "#{att}" %> ><br>
+        <%end%>
+            <input id="submit-button" type='submit' value="Add New Vehicle">
+        </form>
+    </div>
+    <div>
+        <button><a href="/cars">Back to Home</a></button>
+    </div>
+</body>

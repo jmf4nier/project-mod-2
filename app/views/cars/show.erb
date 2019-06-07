@@ -1,0 +1,49 @@
+<style>
+body{
+    display: flex;
+    background-color: Lightgrey;
+    text-align: center;
+    font-size: 25px;
+}
+div{
+    margin: auto;
+}
+form{
+    text-align: right;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+input{
+    font-size: 18px;
+    margin: 1em;   
+}
+ul{
+    padding: 2em;
+    margin-bottom: 5px;
+    
+}
+li{
+    padding: 2px;
+    font-size: 18px;
+}
+button{
+    font-size: 18px;
+    margin-bottom: 3em;
+}
+</style>
+
+
+<div>
+    <h1> <%= @car.make_model_year %> </h1>
+    <ul id="single-car-list">
+        <% @car.attributes.each do |key, value|%>
+            <%if key != "id" %>
+                <li> <%= "#{key}: #{value}" %> </li>
+            <% end %> 
+        <% end %>
+    </ul>
+    <button><a href="/cars/<%= @car.id %>/edit">Edit this Car</a></button> <br>
+    <button><a href="/cars">Back to Home</a></button>
+</div>

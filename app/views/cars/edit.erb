@@ -1,0 +1,43 @@
+<style>
+body{
+    display: flex;
+    background-color: Lightgrey;
+    text-align: center;
+}
+div{
+    margin: auto;
+}
+form{
+    text-align: right;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+input{
+    font-size: 18px;
+    margin: 1em
+    
+}
+
+</style>
+
+<body>
+    <div id="main-page-div">
+        <h1> <%=@car.make_model_year%> </h1>
+        
+        <form method="POST" action='/cars/<%= @car.id %>'>
+            <input type="hidden" name=_method value="patch">
+                <div id='car-input-div'>
+                    <%@car.attributes.each do | key, value | %>
+                        <% if key != "id" %>
+                            <label> <%= key.capitalize %> </label>
+                            <input type= text name= <%= "#{key}" %> value=<%= "#{value}" %>><br>
+                        <%end%>
+                    <%end%>   
+                </div> 
+            <input type="submit" value="Submit Changes">    
+        </form>         
+    </div>          
+</body>      
+        

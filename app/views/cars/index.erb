@@ -1,0 +1,52 @@
+<style>
+body{
+    margin: auto;
+    background-color: Lightgrey;
+    text-align: center;
+    
+}
+ul{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 1em;    
+    margin-right: 15em;
+    margin-left: 15em;
+    font-size: 18px;
+}
+button{
+    font-size: 18px;
+}
+input{
+    font-size: 18px;
+    margin: 1em;
+    padding: 2em;
+}
+
+
+</style>
+
+
+
+<body>
+    <div>
+        <h1> All Cars </h1>
+
+        <% @cars.each do |car| %>
+            
+            <ul>
+                <li> <a href='/cars/<%= car.id %>'> <%= car.make_model_year %> </a>  </li>
+            </ul>
+            
+            <form method=POST action='/cars/<%= car.id %>'>
+                <input type="hidden" name=_method value="delete">
+                <input type="submit" name='' value="Delete">
+            </form>
+            
+        <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+    <button><a href="cars/new">create a new car</a></button>
+</body> 
